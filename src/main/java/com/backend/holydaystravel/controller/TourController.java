@@ -1,9 +1,11 @@
 package com.backend.holydaystravel.controller;
 
+import com.backend.holydaystravel.dto.TourDto;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,18 +14,18 @@ import java.util.List;
 public class TourController {
 
     @GetMapping
-    public ResponseEntity<List<String>> getTours() {
+    public ResponseEntity<List<TourDto>> getTours() {
         return ResponseEntity.ok(new ArrayList<>());
     }
 
     @GetMapping(value = "{tourId}")
-    public ResponseEntity<Object> getTour(@PathVariable Long tourId) {
-        String tourDto = "Tour";
+    public ResponseEntity<TourDto> getTour(@PathVariable Long tourId) {
+        TourDto tourDto = new TourDto(1L, 1990.00, "Wroclaw", "Majorca", LocalDate.now());
         return ResponseEntity.ok(tourDto);
     }
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Void> createTour(@RequestBody String tourDto) {
+    public ResponseEntity<Void> createTour(@RequestBody TourDto tourDto) {
         return ResponseEntity.ok().build();
     }
 
@@ -33,7 +35,8 @@ public class TourController {
     }
 
     @PutMapping
-    public ResponseEntity<Object> updateTour(@RequestBody String tourDto) {
+    public ResponseEntity<TourDto> updateTour(@RequestBody TourDto tourDto) {
+        tourDto = new TourDto(2L, 2599.00, "Wroclaw", "Crete", LocalDate.now());
         return ResponseEntity.ok(tourDto);
     }
 }
