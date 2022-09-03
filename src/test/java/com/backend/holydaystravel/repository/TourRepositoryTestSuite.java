@@ -33,7 +33,6 @@ public class TourRepositoryTestSuite {
         //When
         boolean exist = tourRepository.existsById(tour.getTourId());
         String initiatoryPlace = tourRepository.findById(tour.getTourId()).get().getInitiatoryPlace();
-        String destinationPlace = tourRepository.findById(tour.getTourId()).get().getDestinationPlace();
         double tourPrice = tourRepository.findById(tour.getTourId()).get().getTourPrice();
         //Then
         assertTrue(exist);
