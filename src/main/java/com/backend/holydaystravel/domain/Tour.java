@@ -17,7 +17,7 @@ public final class Tour {
 
     @Id
     @Column(name = "TOUR_ID")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long tourId;
 
     @Column(name = "TOUR_PRICE")
