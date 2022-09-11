@@ -19,8 +19,8 @@ public class TourDbService {
     public Tour getTour(final Long tourId) throws TourNotFoundException {
         return tourRepository.findById(tourId).orElseThrow(TourNotFoundException::new);
     }
-    public void saveTour(final Tour tour) {
-        tourRepository.save(tour);
+    public Tour saveTour(final Tour tour) {
+        return tourRepository.save(tour);
     }
     public void deleteTour(final Long tourId) throws TourNotFoundException {
         Tour searchedTour = tourRepository.findById(tourId).orElseThrow(TourNotFoundException::new);

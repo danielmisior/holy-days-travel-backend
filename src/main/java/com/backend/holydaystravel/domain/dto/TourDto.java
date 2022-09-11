@@ -1,4 +1,4 @@
-package com.backend.holydaystravel.dto;
+package com.backend.holydaystravel.domain.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -18,5 +18,5 @@ public class TourDto {
     private String initiatoryPlace;
     private String destinationPlace;
     private LocalDate departureDate;
-    private Long hotelId;
+    private LocalDate returnDate;
 }

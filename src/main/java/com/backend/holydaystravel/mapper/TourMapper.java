@@ -1,7 +1,7 @@
 package com.backend.holydaystravel.mapper;
 
 import com.backend.holydaystravel.domain.Tour;
-import com.backend.holydaystravel.dto.TourDto;
+import com.backend.holydaystravel.domain.dto.TourDto;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -11,13 +11,14 @@ import java.util.stream.Collectors;
 public class TourMapper {
 
     public Tour mapToTour(final TourDto tourDto) {
-        return new Tour(
-                tourDto.getTourId(),
-                tourDto.getTourPrice(),
-                tourDto.getInitiatoryPlace(),
-                tourDto.getDestinationPlace(),
-                tourDto.getDepartureDate()
-        );
+        return Tour.builder()
+                .tourId(tourDto.getTourId())
+                .tourPrice(tourDto.getTourPrice())
+                .initiatoryPlace(tourDto.getInitiatoryPlace())
+                .destinationPlace(tourDto.getDestinationPlace())
+                .departureDate(tourDto.getDepartureDate())
+                .returnDate(tourDto.getReturnDate())
+                .build();
     }
     public TourDto mapToTourDto(final Tour tour) {
         return new TourDto(
@@ -25,7 +26,8 @@ public class TourMapper {
                 tour.getTourPrice(),
                 tour.getInitiatoryPlace(),
                 tour.getDestinationPlace(),
-                tour.getDepartureDate()
+                tour.getDepartureDate(),
+                tour.getReturnDate()
         );
     }
     public List<TourDto> mapToTourDtoList(final List<Tour> tours) {

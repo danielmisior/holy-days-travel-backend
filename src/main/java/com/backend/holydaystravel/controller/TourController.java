@@ -1,6 +1,6 @@
 package com.backend.holydaystravel.controller;
 
-import com.backend.holydaystravel.dto.TourDto;
+import com.backend.holydaystravel.domain.dto.TourDto;
 import com.backend.holydaystravel.exception.TourNotFoundException;
 import com.backend.holydaystravel.facade.TourFacade;
 import lombok.RequiredArgsConstructor;
@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin("*")
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("v1/tour")
@@ -40,6 +41,6 @@ public class TourController {
 
     @PutMapping
     public ResponseEntity<TourDto> updateTour(@RequestBody TourDto tourDto) throws TourNotFoundException {
-        return ResponseEntity.ok(tourFacade.updateTour(tourDto));
+       return ResponseEntity.ok(tourFacade.updateTour(tourDto));
     }
 }

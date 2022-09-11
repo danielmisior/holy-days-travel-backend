@@ -1,7 +1,7 @@
 package com.backend.holydaystravel.facade;
 
 import com.backend.holydaystravel.domain.Tour;
-import com.backend.holydaystravel.dto.TourDto;
+import com.backend.holydaystravel.domain.dto.TourDto;
 import com.backend.holydaystravel.exception.TourNotFoundException;
 import com.backend.holydaystravel.mapper.TourMapper;
 import com.backend.holydaystravel.service.TourDbService;
@@ -45,8 +45,8 @@ public class TourFacade {
     public TourDto updateTour(final TourDto tourDto) throws TourNotFoundException {
         Tour tour = mapper.mapToTour(tourDto);
         LOGGER.info("Starting updating the tour...");
-        dbService.saveTour(tour);
+        Tour savedTour = dbService.saveTour(tour);
         LOGGER.info("The tour has been updated.");
-        return mapper.mapToTourDto(tour);
+        return mapper.mapToTourDto(savedTour);
     }
 }

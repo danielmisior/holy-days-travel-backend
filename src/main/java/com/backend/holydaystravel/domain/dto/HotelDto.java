@@ -1,4 +1,4 @@
-package com.backend.holydaystravel.dto;
+package com.backend.holydaystravel.domain.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
