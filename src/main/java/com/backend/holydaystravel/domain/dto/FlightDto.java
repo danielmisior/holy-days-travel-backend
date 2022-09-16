@@ -13,6 +13,6 @@ public class FlightDto {
     private Long flightId;
     private String departureAirport;
     private String arrivalAirport;
-    private LocalDateTime departureScheduled;
-    private LocalDateTime arrivalScheduled;
+    private LocalDateTime scheduledDeparture;
+    private LocalDateTime scheduledReturn;
 }

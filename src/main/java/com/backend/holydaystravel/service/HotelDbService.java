@@ -27,7 +27,7 @@ public class HotelDbService {
         hotelRepository.delete(searchedHotel);
     }
     public Hotel updateHotel(final Hotel hotel) throws HotelNotFoundException {
-        Hotel searchedHotel = hotelRepository.findById(hotel.getHotelId()).orElseThrow(HotelNotFoundException::new);
+        hotelRepository.findById(hotel.getHotelId()).orElseThrow(HotelNotFoundException::new);
         return hotelRepository.save(hotel);
     }
 }
