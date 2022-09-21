@@ -1,4 +1,4 @@
-package com.backend.holydaystravel.config;
+package com.backend.holydaystravel.openweather.config;
 
 import lombok.Getter;
 import org.springframework.beans.factory.annotation.Value;
