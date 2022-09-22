@@ -9,6 +9,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Wind {
     private double speed;
-    private long deg;
+    private int deg;
     private double gust;
 }

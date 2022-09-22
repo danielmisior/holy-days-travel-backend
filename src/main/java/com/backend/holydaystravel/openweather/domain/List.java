@@ -12,12 +12,9 @@ import java.util.ArrayList;
 @AllArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class List {
-    private long dt;
     private Main main;
     private ArrayList<Weather> weather;
     private Clouds clouds;
     private Wind wind;
-    private long visibility;
-    private Sys sys;
-    private String dt_text;
+    private int visibility;
 }

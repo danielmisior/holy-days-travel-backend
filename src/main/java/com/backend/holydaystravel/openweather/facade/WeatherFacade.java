@@ -1,5 +1,6 @@
 package com.backend.holydaystravel.openweather.facade;
 
+import com.backend.holydaystravel.openweather.domain.dto.WeatherDto;
 import com.backend.holydaystravel.openweather.domain.dto.WeatherForecastDto;
 import com.backend.holydaystravel.openweather.service.WeatherService;
 import lombok.RequiredArgsConstructor;
@@ -12,6 +13,13 @@ import org.springframework.stereotype.Component;
 public class WeatherFacade {
     private static final Logger LOGGER = LoggerFactory.getLogger(WeatherFacade.class);
     private final WeatherService service;
+
+    public WeatherDto fetchActualWeather(String cityName) {
+        LOGGER.info("Starting sending request to Open Weather...");
+        WeatherDto weatherDto = service.getActualWeather(cityName);
+        LOGGER.info("The actual weather for " + cityName + " has been fetched.");
+        return weatherDto;
+    }
 
     public WeatherForecastDto fetch5DayWeatherForecast(String cityName) {
         LOGGER.info("Starting sending request to Open Weather...");

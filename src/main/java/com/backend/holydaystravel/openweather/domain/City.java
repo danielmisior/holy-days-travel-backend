@@ -10,11 +10,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class City {
-    private long id;
     private String name;
     private String country;
-    private long population;
-    private long timezone;
-    private long sunrise;
-    private long sunset;
+    private int population;
+    private int timezone;
+    private int sunrise;
+    private int sunset;
 }

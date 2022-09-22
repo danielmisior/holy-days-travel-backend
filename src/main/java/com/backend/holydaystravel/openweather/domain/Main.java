@@ -12,9 +12,8 @@ public class Main {
     private double feels_like;
     private double temp_min;
     private double temp_max;
-    private long pressure;
-    private long sea_level;
-    private long grnd_level;
-    private long humidity;
-    private double temp_kf;
+    private int pressure;
+    private int sea_level;
+    private int grnd_level;
+    private int humidity;
 }

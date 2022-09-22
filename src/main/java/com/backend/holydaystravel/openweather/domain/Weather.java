@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Weather {
-    private long id;
+    private int id;
     private String main;
     private String description;
     private String icon;
