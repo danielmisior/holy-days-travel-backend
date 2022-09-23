@@ -1,8 +1,8 @@
 package com.backend.holydaystravel.openweather.service;
 
 import com.backend.holydaystravel.openweather.client.OpenWeatherClient;
-import com.backend.holydaystravel.openweather.domain.dto.WeatherDto;
-import com.backend.holydaystravel.openweather.domain.dto.WeatherForecastDto;
+import com.backend.holydaystravel.openweather.dto.WeatherDto;
+import com.backend.holydaystravel.openweather.dto.WeatherForecastDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

@@ -2,12 +2,12 @@ package com.backend.holydaystravel.client;
 
 import com.backend.holydaystravel.openweather.client.OpenWeatherClient;
 import com.backend.holydaystravel.openweather.config.OpenWeatherConfiguration;
-import com.backend.holydaystravel.openweather.domain.City;
-import com.backend.holydaystravel.openweather.domain.Clouds;
-import com.backend.holydaystravel.openweather.domain.Main;
-import com.backend.holydaystravel.openweather.domain.Wind;
-import com.backend.holydaystravel.openweather.domain.dto.WeatherDto;
-import com.backend.holydaystravel.openweather.domain.dto.WeatherForecastDto;
+import com.backend.holydaystravel.openweather.dto.City;
+import com.backend.holydaystravel.openweather.dto.Clouds;
+import com.backend.holydaystravel.openweather.dto.Main;
+import com.backend.holydaystravel.openweather.dto.Wind;
+import com.backend.holydaystravel.openweather.dto.WeatherDto;
+import com.backend.holydaystravel.openweather.dto.WeatherForecastDto;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;

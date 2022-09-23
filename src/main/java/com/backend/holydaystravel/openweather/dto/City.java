@@ -1,4 +1,4 @@
-package com.backend.holydaystravel.openweather.domain;
+package com.backend.holydaystravel.openweather.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;

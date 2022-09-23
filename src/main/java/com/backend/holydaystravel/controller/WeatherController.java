@@ -1,7 +1,7 @@
 package com.backend.holydaystravel.controller;
 
-import com.backend.holydaystravel.openweather.domain.dto.WeatherDto;
-import com.backend.holydaystravel.openweather.domain.dto.WeatherForecastDto;
+import com.backend.holydaystravel.openweather.dto.WeatherDto;
+import com.backend.holydaystravel.openweather.dto.WeatherForecastDto;
 import com.backend.holydaystravel.openweather.facade.WeatherFacade;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

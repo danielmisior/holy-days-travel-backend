@@ -1,9 +1,7 @@
 package com.backend.holydaystravel.facade;
 
 
-import com.backend.holydaystravel.openweather.domain.*;
-import com.backend.holydaystravel.openweather.domain.dto.WeatherDto;
-import com.backend.holydaystravel.openweather.domain.dto.WeatherForecastDto;
+import com.backend.holydaystravel.openweather.dto.*;
 import com.backend.holydaystravel.openweather.facade.WeatherFacade;
 import com.backend.holydaystravel.openweather.service.WeatherService;
 import org.junit.jupiter.api.Test;

@@ -1,4 +1,4 @@
-package com.backend.holydaystravel.openweather.domain;
+package com.backend.holydaystravel.openweather.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

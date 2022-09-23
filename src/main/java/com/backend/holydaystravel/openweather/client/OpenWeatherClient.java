@@ -1,8 +1,8 @@
 package com.backend.holydaystravel.openweather.client;
 
 import com.backend.holydaystravel.openweather.config.OpenWeatherConfiguration;
-import com.backend.holydaystravel.openweather.domain.dto.WeatherDto;
-import com.backend.holydaystravel.openweather.domain.dto.WeatherForecastDto;
+import com.backend.holydaystravel.openweather.dto.WeatherDto;
+import com.backend.holydaystravel.openweather.dto.WeatherForecastDto;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

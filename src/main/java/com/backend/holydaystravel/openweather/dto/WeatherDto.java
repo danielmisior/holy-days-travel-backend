@@ -1,9 +1,5 @@
-package com.backend.holydaystravel.openweather.domain.dto;
+package com.backend.holydaystravel.openweather.dto;
 
-import com.backend.holydaystravel.openweather.domain.Clouds;
-import com.backend.holydaystravel.openweather.domain.Main;
-import com.backend.holydaystravel.openweather.domain.Weather;
-import com.backend.holydaystravel.openweather.domain.Wind;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
