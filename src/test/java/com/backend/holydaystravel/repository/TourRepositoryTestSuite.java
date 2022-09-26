@@ -62,6 +62,7 @@ public class TourRepositoryTestSuite {
     @Test
     void findAllTours() {
         //Given
+        tourRepository.deleteAll();
         tourRepository.save(tour);
         Tour tour2 = Tour.builder().tourPrice(2000.00).initiatoryPlace("test")
                 .destinationPlace("test").departureDate(LocalDate.now()).returnDate(LocalDate.now().plusDays(7)).build();

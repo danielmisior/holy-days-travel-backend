@@ -19,4 +19,6 @@ public class TourDto {
     private String destinationPlace;
     private LocalDate departureDate;
     private LocalDate returnDate;
+    private Long flightId;
+    private Long hotelId;
 }

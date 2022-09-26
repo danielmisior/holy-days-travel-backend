@@ -4,33 +4,46 @@ import com.backend.holydaystravel.domain.Flight;
 import com.backend.holydaystravel.domain.Hotel;
 import com.backend.holydaystravel.domain.Tour;
 import com.backend.holydaystravel.domain.dto.TourDto;
+import com.backend.holydaystravel.service.FlightDbService;
+import com.backend.holydaystravel.service.HotelDbService;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
 public class TourMapperTestSuite {
+    @Autowired
     private TourMapper tourMapper;
+
+    @Autowired
+    private FlightDbService flightService;
+
+    @Autowired
+    private HotelDbService hotelService;
+
     private Tour tour;
     private TourDto tourDto;
+    private Flight flight;
+    private Hotel hotel;
 
     @BeforeEach
     void initTest() {
-        tourMapper = new TourMapper();
-        Hotel hotel = new Hotel(1L, "hotel", "country",
-                "address", 5, 38.99, 3, new ArrayList<>());
-        Flight flight = new Flight(1L, "departure airport",
-                "arrival airport", LocalDateTime.now(), LocalDateTime.now().plusDays(7), tour);
-        tourDto = new TourDto(1L, 1999.99, "Wroclaw",
-                "Majorca", LocalDate.of(2022, 12, 15),
-                LocalDate.of(2022, 12, 22));
+        hotel = Hotel.builder().hotelName("name").country("country").address("address")
+                .stars(5).pricePerNight(30.99).nightsNumber(5).build();
+        flight = Flight.builder().departureAirport("test").arrivalAirport("test")
+                .scheduledDeparture(LocalDateTime.now()).scheduledReturn(LocalDateTime.now().plusDays(5)).build();
+
+        flightService.saveFlight(flight);
+        hotelService.saveHotel(hotel);
+
         tour = Tour.builder()
                 .tourPrice(2999.99)
                 .initiatoryPlace("Warsaw")
@@ -40,6 +53,15 @@ public class TourMapperTestSuite {
                 .hotel(hotel)
                 .flight(flight)
                 .build();
+        tourDto = new TourDto(1L, 1999.99, "Wroclaw",
+                "Majorca", LocalDate.of(2022, 12, 15),
+                LocalDate.of(2022, 12, 22), flight.getFlightId(), hotel.getHotelId());
+    }
+
+    @AfterEach
+    void afterEveryTest() {
+        flightService.deleteFlight(flight.getFlightId());
+        hotelService.deleteHotel(hotel.getHotelId());
     }
 
     @Test
