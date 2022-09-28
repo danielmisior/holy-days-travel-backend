@@ -35,11 +35,11 @@ public final class Tour {
     @Column(name = "RETURN_DATE")
     private LocalDate returnDate;
 
-    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
+    @ManyToOne
     @JoinColumn(name = "HOTEL_ID")
     private Hotel hotel;
 
-    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "FLIGHT_ID")
     private Flight flight;
 }

@@ -28,9 +28,9 @@ public class FlightController {
     }
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Void> createFlight(@RequestBody FlightDto flightDto) {
+    public ResponseEntity<FlightDto> createFlight(@RequestBody FlightDto flightDto) {
         flightFacade.createFlight(flightDto);
-        return ResponseEntity.ok().build();
+        return ResponseEntity.ok(flightFacade.createFlight(flightDto));
     }
 
     @DeleteMapping(value = "{flightId}")

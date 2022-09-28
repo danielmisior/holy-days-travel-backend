@@ -14,6 +14,7 @@ public class PlacePropertiesDto {
     private String xid;
     private String name;
     private String otm;
+    private String wikipedia;
     private String image;
     private Preview preview;
     @JsonProperty("wikipedia_extracts")

@@ -31,11 +31,12 @@ public class FlightFacade {
         LOGGER.info("The flight has been fetched.");
         return mapper.mapToFlightDto(flight);
     }
-    public void createFlight(final FlightDto flightDto) {
+    public FlightDto createFlight(final FlightDto flightDto) {
         Flight flight = mapper.mapToFlight(flightDto);
         LOGGER.info("Starting creating the flight...");
-        service.saveFlight(flight);
+        Flight savedFlight = service.saveFlight(flight);
         LOGGER.info("The flight has been created.");
+        return mapper.mapToFlightDto(savedFlight);
     }
     public void deleteFlight(final Long flightId) throws FlightNotFoundException {
         LOGGER.info("Starting deleting the flight...");

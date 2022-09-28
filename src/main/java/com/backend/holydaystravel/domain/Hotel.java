@@ -40,6 +40,9 @@ public final class Hotel {
     @Column(name = "NUMBER_OF_NIGHTS")
     private Integer nightsNumber;
 
-    @OneToOne(mappedBy = "hotel")
-    private Tour tour;
+    @OneToMany(
+            targetEntity = Tour.class,
+            mappedBy = "hotel"
+    )
+    private List<Tour> tours;
 }
